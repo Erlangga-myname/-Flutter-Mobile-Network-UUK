@@ -3,6 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'view/login_page.dart';
 import 'view/home_page.dart';
 import 'view/resep_detail_page.dart';
+import 'view/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,6 +22,12 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       initialRoute: '/',
+      routes: {
+        '/': (context) => const SplashScreen(),
+        '/auth': (context) => const AuthenticationWrapper(),
+        '/login': (context) => const LoginPage(),
+        '/home': (context) => const HomePage(),
+      },
       onGenerateRoute: (settings) {
         if (settings.name == '/recipe-detail') {
           final recipeId = settings.arguments as int;
@@ -29,11 +36,6 @@ class MyApp extends StatelessWidget {
           );
         }
         return null;
-      },
-      routes: {
-        '/': (context) => const AuthenticationWrapper(),
-        '/login': (context) => const LoginPage(),
-        '/home': (context) => const HomePage(),
       },
     );
   }
