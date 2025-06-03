@@ -26,7 +26,7 @@ class _RecipeListPageState extends State<RecipeListPage> {
     return Column(
       children: [
         Container(
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.fromLTRB(16, 40, 16, 16), 
           decoration: BoxDecoration(
             color: Theme.of(context).primaryColor,
             borderRadius: const BorderRadius.vertical(
@@ -43,6 +43,7 @@ class _RecipeListPageState extends State<RecipeListPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const SizedBox(height: 8), 
               Text(
                 'Haiii  \nLagi Mood Masak Apa Nih?',
                 style: Theme.of(context).textTheme.headlineSmall?.copyWith(
